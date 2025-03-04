@@ -27,7 +27,7 @@ let state;
 // object 
 
 // typeof => which datatype it belongs to
-console.log(typeof"Swasti");
-console.log(typeof age);
+console.log(typeof"Swasti"); // o/p :- string
+console.log(typeof age); // o/p :- number 
 console.log(typeof null); // o/p :- object
 console.log(typeof undefined); // o/p :- undefined
