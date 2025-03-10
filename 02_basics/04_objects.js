@@ -58,3 +58,22 @@ console.log(Object.entries(tinder_User)); // o/p :- [ [ 'id', '123abc' ], [ 'nam
 console.log(tinder_User.hasOwnProperty('isLoggedIn')); // o/p :- true
 
 
+// destructure objects
+const course = {
+    coursename: "js in hindi",
+    price: "999",
+    courseInstructor: "swasti"
+}
+const {courseInstructor} = course
+console.log(courseInstructor); // o/p :- swasti
+
+const {courseInstructor: instructor} = course 
+console.log(instructor); // o/p :- swasti
+
+// // JSON
+// {
+//     name: "swasti",
+//     coursename: "JS in hindi",
+//     price: "free"
+// }
+// JSON formatter 
