@@ -5,11 +5,11 @@ function one(){
         const website = "youtube"
         console.log(username);
     }
-    // console.log(website);
+    console.log(website); // error
     
-    // two() // error
+    two() // error
 }
-// one() // error
+one() // error
 
 
 if (true) {
@@ -18,9 +18,9 @@ if (true) {
         const website = "youtube"
         console.log(username + " "+website); // o/p :- sanu youtube
     } 
-    // console.log(website); // error
+    console.log(website); // error
 }
-// console.log(username); // error
+console.log(username); // error
 
 
 // the chlid function can access the parent elements but parent cannot access the child elements similarly in if case also
