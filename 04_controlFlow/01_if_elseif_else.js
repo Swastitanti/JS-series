@@ -48,3 +48,20 @@ if (price < 500){
 }else {
     console.log("less than 1200");   
 }
+
+
+// && || 
+const userLoggedIn = true
+const debitCard = true 
+const loggedInFromGoogle = false
+const loggedInFromEmail = true 
+
+// in AND (&&) both statement should be true than it will give true otherwise false
+if (userLoggedIn && debitCard){
+    console.log("Allow to buy course");
+}
+
+// In OR(||) either of the statement can be true than it will give true. it only give false if neither of the statement is true
+if (loggedInFromGoogle || loggedInFromEmail){
+    console.log("User Logged in.");
+}
