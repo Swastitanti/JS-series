@@ -1,0 +1,50 @@
+<!-- Document Object Model (DOM) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM Learning</title>
+</head>
+<body>
+    <div id = "title" class = "bg_block">
+        <h1 class = "heading">DOM learning on youtube</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, officia!</p>
+    </div>
+</body>
+</html>
+
+
+/*
+=> in browser wikipedia javascript,  inspect (console) we can get the document by using 
+=> console.log(window.document)
+=> console.log(document)
+=> console.dir(document)
+=> documents are drawn as 
+    1. window inside window
+    2. html file and html  file divided into 2 
+        1. head and inside head 
+            1. title and inside title
+                1. text node
+            2. meta and inside meta 
+                1. attributes
+        2. body inside body 
+            1. div  
+                1. attribute 
+                    1. h1 
+                        1. attribut
+                        2. text node 
+                    2. p 
+                        1. attribute
+                        2. text node
+=> console.log(document.baseURI)
+=> console.log(document.link)
+    but in the we get collection of links but it is not array
+=> console.log(document.link[2])
+    we get the 2nd link of the document
+=> document.getElementById('className or idName')
+=> if we want to change the innerHTML
+    document.getElementById('firstHeading').innerHTML = "<h1>write the name of heading</h1>" 
+    and this id called DOM manipulation
+*/
