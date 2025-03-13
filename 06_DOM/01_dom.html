@@ -5,12 +5,29 @@
 <head>
     <meta charset="UTF-8">
     
-    <title>DOM Learning</title>
+    <title>DOM learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
 </head>
-<body>
-    <div id = "title" class = "bg_block">
-        <h1 class = "heading">DOM learning on youtube</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, officia!</p>
+<body class="bg-black">
+    <div >
+        <h1  id="title" class="heading">DOM learning on Chai aur code <span style="display: none;">test text</span></h1>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <input type="password" name="" id="">
+
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
     </div>
 </body>
 </html>
@@ -47,4 +64,28 @@
 => if we want to change the innerHTML
     document.getElementById('firstHeading').innerHTML = "<h1>write the name of heading</h1>" 
     and this id called DOM manipulation
+=> document.getElementById('title')
+=> document.getElementById('title').id
+=> document.getElementById('title').className
+=> document.getElementById('title').getAttributes('id')
+=> document.getElementBy Id('title').getAttribute('class')
+=> document.getElementById('title').setAttribute('class', 'test heading')
+=> const title = document.getElementById('title')
+=> title.style.backgroundColor = 'green'
+=> title.textContent (we use it to get hidden text also), title.innerHTML(with thi we can get inner html attributes also), title.innerText(we use it to get only visible text) (with this we get the text witten inthe title variable)
+
+<!-- important DOM query selector -->
+ 1. document.querySelector('h1')
+ 2. document.querySelectorAll('li') {it not give the pure array in array it give all the prototype that we can use in this we get node list}
+ 3.document.getSelectorAll('list-item') {this give HTML collection}
+
+ <!-- convert in array -->
+  => Array.from(tempClassList)
+  => const myConvertedArray = Array.from(tempClassList)
+  => myConvertedArray.forEach(function(li){
+    li.style.color = 'orange'
+  })
+
+  
+ link :- https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
 */
