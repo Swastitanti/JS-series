@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+   <script>
+        document.getElementById('owl').onclick = function(){
+            alert("owl clicked")
+        } // it gives less features
+        
+        document.getElementById('owl').addEventListener('click', function(){
+            alert("owl clicked again")
+        })
+
+        document.getElementById('owl').addEventListener('click', function(e){
+            alert("owl clicked again")
+        }) // here e is the function object
+
+        
+        // Event propagation
+
+        document.getElementById('images').addEventListener('click', function(e){
+            console.log("clicked inside the url")
+        }, false) // it only give url click
+
+        document.getElementById('owl').addEventListener('click', function(e){
+            console.log("owl clicked")
+        }, false) // it first click on owl than it give click inside url
+
+        document.getElementById('images').addEventListener('click', function(e){
+            console.log("owl clicked");
+            e.stopPropagation() // it stop the propagation for top elements 
+        }, false)
+
+        document.getElementById('owl').addEventListener('click', function(e){
+            console.log("owl clicked")
+        }, true) // it first click on url than it give click inside owl
+
+
+        // Prevent Default
+        document.getElementById('google').addEventListener('click', function(e){
+            e.preventDefault() // it prevent from draging of the id
+            e.stopPropagation() 
+            console.log("google clicked");
+        }, false)
+
+
+        // wanted to disappear the image on click
+
+        document.querySelector('#images').addEventListener('click', function(e){
+            console.log(e.target);
+            console.log(e.target.parentNode);
+            let removeIt = e.target.parentNode
+            removeIt.remove() // it remove the parent list if we click on list items
+
+            // another way
+            removeIt.parentNode.removeChild(removeIt)
+
+            // Best way
+            console.log(e.target.tagName);
+            if (e.target.tagName == 'IMG'){
+                console.log(e.target.id);
+                let removeIt = e.target.parentNode 
+                removeIt.remove()
+            }
+        })
+
+
+    /* 
+    => events are actually based on  
+       activity on the system we want
+       for example :- moving of mouse some action will be done
+    => there are many event listeners
+        1. attachEvent (early time)
+        2. jQuery :- on
+    => events type 
+        1. browser type 
+        2. environment type
+    => two type of Event propogation
+        1. event bubbling (it is default value which is false, it drag from inside to outside means bottom to up)
+        2. event capturing (and it is true value, it drag from outside to inside means top to bottom)
+    => what to study 
+        1. type, timeStamp, defaultPrevented
+        2. target, toElement, srcElement, currentTarget
+        3. clientX, clientY, screenX, screenY
+        4. altkey, ctrlkey, shiftkey, keyCode
+    
+    */
+   </script>
+</body>
+</html>
