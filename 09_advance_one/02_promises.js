@@ -108,4 +108,18 @@ fetch('https://jsonplaceholder.typicode.com/users').then((response) => {
 => finally always execute, it is a default value
 => async problem is that they directly don't handle the error
 => we use try.catch for handle the error which comes due to async when the error is true
+=> fetch response are catagarized in two parts
+    1. reserve space for the data, variable etc...
+    (data space by default it is empty and it take data from onfulfilled and onRejection and inside the onfulfilled and onRejection there are functions which get response from network and give it to the data set fulfill and after this data give response to the global memory to fulfill the response)
+        -> first it reserve space in the memory 
+        -> two arrays are there
+            1. onfulfilled[]
+                ->it is the resolution of the promise
+            2. onRejection[]
+                -> it is the rejection of the promise
+        (we cannot push data directictly in the array according to us we cannot access it. It privately saved)
+    2. it handles web browser based API or it can handle node based API 
+        -> network request (we cannot directly access it. It need response from browser or node) 
+            -> if we get network response it directly goes to the onfulfilled
+            -> if we don't get any response it goes to onRejection 
 */
